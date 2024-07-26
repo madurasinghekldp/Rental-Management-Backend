@@ -31,4 +31,14 @@ public class CustomerServiceImpl implements CustomerService {
         });
         return custList;
     }
+
+    public void delete(Customer customer){
+        customerRepository.delete(mapper.convertValue(customer, CustomerEntity.class));
+    }
+
+    public void deleteById(Long id){
+        if(customerRepository.existsById(id)) {
+            customerRepository.deleteById(id);
+        }
+    }
 }

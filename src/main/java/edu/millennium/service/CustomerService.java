@@ -8,4 +8,8 @@ public interface CustomerService {
     Customer persist(Customer customer);
 
     List<Customer> getAll();
+
+    void delete(Customer customer);
+
+    void deleteById(Long id);
 }
