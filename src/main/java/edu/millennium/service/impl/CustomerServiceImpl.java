@@ -8,6 +8,9 @@ import edu.millennium.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
@@ -18,5 +21,14 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer persist(Customer customer){
         CustomerEntity saved = customerRepository.save(mapper.convertValue(customer, CustomerEntity.class));
         return mapper.convertValue(saved,Customer.class);
+    }
+
+    public List<Customer> getAll(){
+        Iterable<CustomerEntity> all = customerRepository.findAll();
+        List<Customer> custList = new ArrayList<>();
+        all.forEach(cust -> {
+            custList.add((mapper.convertValue(cust,Customer.class)));
+        });
+        return custList;
     }
 }

@@ -5,6 +5,8 @@ import edu.millennium.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/cust")
 @CrossOrigin
@@ -18,4 +20,8 @@ public class CustomerController {
         return customerService.persist(customer);
     }
 
+    @GetMapping("all")
+    public List<Customer> getAll(){
+        return customerService.getAll();
+    }
 }
