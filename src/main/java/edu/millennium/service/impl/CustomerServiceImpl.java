@@ -41,4 +41,8 @@ public class CustomerServiceImpl implements CustomerService {
             customerRepository.deleteById(id);
         }
     }
+
+    public void update(Customer customer){
+        customerRepository.save(mapper.convertValue(customer, CustomerEntity.class));
+    }
 }

@@ -24,9 +24,14 @@ public class CustomerController {
     public List<Customer> getAll(){
         return customerService.getAll();
     }
-    
+
     @DeleteMapping("delete")
     public void deleteById(@RequestParam(name="id") String id){
         customerService.deleteById(Long.parseLong(id));
+    }
+
+    @PutMapping("update")
+    public void update(@RequestBody Customer customer){
+        customerService.update(customer);
     }
 }
