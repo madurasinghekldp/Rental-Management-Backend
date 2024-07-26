@@ -7,3 +7,5 @@ o
 ?src/main/java/edu/millennium/controller/CustomerController.java,0\a\0a9481f8f710a970e6824e08f99c82731276c046
 ^
 .src/main/java/edu/millennium/dto/Customer.java,e\d\ed2c9062d33453dcb37c4d60397daa42ec40f4be
+g
+7src/main/java/edu/millennium/entity/CustomerEntity.java,f\4\f4f9be76160dbdba9424344bce22f48dfac27a5a
